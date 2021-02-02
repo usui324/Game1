@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Encount">
+
+    <!--下テキスト-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/text"
+        android:text="テキスト"
+        android:gravity="center"
+        android:textSize="30dp"
+        />
+
+    <!--今は亡きreturnボタン-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/num"
+        android:text="num"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:visibility="gone"/>
+
+    <!--ポケモン画像-->
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:id="@+id/pokemon"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/left" />
+
+    <!--新規リターンボタン-->
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/left"
+        android:text="Return"
+        android:textSize="20dp"
+        android:onClick="onReturn"
+        android:background="@drawable/button_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/pokemon"
+        app:layout_constraintBottom_toTopOf="@id/text"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!--Aボタン-->
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/right"
+        android:onClick="onA"
+        android:text="A"
+        android:textSize="45dp"
+        android:background="@drawable/button_round"
+        app:layout_constraintTop_toBottomOf="@id/pokemon"
+        app:layout_constraintBottom_toTopOf="@id/text"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--確認するボタン-->
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/confirm"
+        android:onClick="onConfirm"
+        android:text="ボールを確認する"
+        android:textSize="20dp"
+        android:background="@drawable/button_rectangle2"
+        app:layout_constraintTop_toTopOf="@id/right"
+        app:layout_constraintBottom_toBottomOf="@id/right"
+        app:layout_constraintStart_toStartOf="@id/left"
+        app:layout_constraintEnd_toEndOf="@id/right"
+        android:visibility="invisible"/>
+
+    <!--マップに戻るボタン-->
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/returnMap"
+        android:onClick="onReturn"
+        android:text="マップに戻る"
+        android:textSize="20dp"
+        android:background="@drawable/button_rectangle"
+        app:layout_constraintTop_toTopOf="@id/right"
+        app:layout_constraintBottom_toBottomOf="@id/right"
+        app:layout_constraintStart_toStartOf="@id/left"
+        app:layout_constraintEnd_toEndOf="@id/right"
+        android:visibility="invisible"/>
+
+    <!--モンスターボール-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/ball"
+        android:src="@drawable/ball"
+        android:scaleType="fitCenter"
+        android:onClick="onBall"
+        app:layout_constraintBottom_toTopOf="@id/text"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        />
+
+    <!--使うかわからない二個目のボール-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/ball2"
+        android:src="@drawable/ball"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="@id/ball"
+        app:layout_constraintBottom_toBottomOf="@id/ball"
+        app:layout_constraintStart_toStartOf="@+id/ball"
+        app:layout_constraintEnd_toEndOf="@id/ball"
+        android:visibility="invisible"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
